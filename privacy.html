@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WakeMotion 개인정보처리방침입니다.">
+  <meta name="theme-color" content="#090b18">
+  <title>WakeMotion 개인정보처리방침</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="WakeMotion 지원 홈">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span>WakeMotion</span>
+    </a>
+    <a class="header-link" href="./">지원</a>
+  </header>
+
+  <main class="document-page">
+    <section class="document-hero">
+      <p class="eyebrow">PRIVACY</p>
+      <h1>개인정보처리방침</h1>
+      <dl class="metadata">
+        <div><dt>시행일</dt><dd>2026년 8월 15일</dd></div>
+        <div><dt>서비스 제공자</dt><dd>WakeMotion</dd></div>
+        <div><dt>문의</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
+      </dl>
+    </section>
+
+    <article class="policy-card">
+      <section>
+        <h2>1. 서비스 개요</h2>
+        <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하는 온디바이스 앱입니다. 현재 광고 없는 버전에는 계정, 서버 변환, SNS 다운로드, 공개 게시, 광고 또는 분석 기능이 없습니다.</p>
+      </section>
+
+      <section>
+        <h2>2. 앱이 기기 안에서 처리하는 정보</h2>
+        <ul>
+          <li>Apple 시스템 사진 선택기에서 사용자가 명시적으로 고른 동영상 한 개</li>
+          <li>선택 구간, 대표 사진 시점, 임시 썸네일과 호환성 판단용 축소 밝기 표본</li>
+          <li>첫 설정에서 사용자가 직접 촬영한 Live Photo의 현재 기기 호환 정보</li>
+          <li>변환된 HEIC 사진과 무음 H.264 paired MOV</li>
+        </ul>
+        <p>WakeMotion 운영자는 위 원본, 프레임, 호환 정보 또는 완성 파일을 서버로 전송하거나 수집하지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>3. iPhone 맞춤 촬영</h2>
+        <p>잠금 화면 호환성을 높이기 위해 사용자가 명시적으로 촬영 버튼을 누르면 카메라와 마이크 권한을 요청하고 Apple의 Live Photo 촬영 기능을 한 번 실행합니다. 마이크 권한은 Apple 촬영 파이프라인 구성에 필요하지만 WakeMotion이 만드는 최종 결과는 무음입니다.</p>
+        <p>촬영한 사진과 동영상 파일은 사진 보관함에 저장하지 않으며, 필요한 호환 정보를 추출한 직후 삭제합니다. 출력에 필요한 최소 profile만 Apple CryptoKit의 AES-GCM으로 암호화해 앱 전용 저장소에 보관하고, 암호 키는 다른 기기로 동기화되지 않는 ThisDeviceOnly Keychain에 저장합니다. iOS 버전·기기 모델·출력 규격이 달라지거나 사용자가 설정에서 삭제하면 profile과 키를 제거합니다.</p>
+        <p>호환 정보의 전체 내부 형식은 Apple이 공개하지 않았습니다. WakeMotion은 계정, 위치, 연락처, 얼굴, 사진 프레임, 오디오 또는 UDID를 의도적으로 profile에 넣지 않지만, 공개되지 않은 payload의 모든 필드 의미를 보증할 수는 없습니다. 같은 profile 일부는 사용자가 만드는 paired MOV 안에 포함되어 사진 보관함에 저장될 수 있습니다. WakeMotion은 이를 로그·분석·서버로 보내지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>4. 사진 보관함과 권한</h2>
+        <p>동영상 선택은 Apple PhotosPicker를 사용하므로 WakeMotion이 사용자의 전체 사진 목록을 열람하지 않습니다. 완성 결과를 저장할 때만 사진 추가 전용 권한을 요청합니다. 사용자가 iCloud Photos를 켠 경우 저장한 결과는 Apple 설정에 따라 iCloud로 동기화될 수 있으며, 이는 WakeMotion 서버 전송이 아닙니다.</p>
+      </section>
+
+      <section>
+        <h2>5. 보관과 삭제</h2>
+        <ul>
+          <li>선택 영상과 변환 임시 파일: 교체, 취소, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
+          <li>맞춤 촬영 HEIC/MOV: 추출 성공 또는 실패 직후 삭제</li>
+          <li>암호화된 기기 profile: 사용자가 설정에서 삭제, 앱 삭제, 환경 불일치 또는 복호화 실패 때 삭제</li>
+          <li>사진 보관함에 저장된 결과: 사용자가 Apple Photos에서 직접 관리</li>
+        </ul>
+        <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>6. 광고·분석·제3자 제공</h2>
+        <p>현재 광고 없는 버전에는 광고, 분석, 충돌 보고, 원격 설정 또는 타사 네트워크 SDK가 없습니다. WakeMotion은 앱에서 처리한 사용자 데이터를 광고사나 분석사에 제공하지 않습니다. 향후 광고 SDK를 추가하면 실제 데이터 처리, 국외 처리, 동의·거부 방법과 App Store 개인정보 표시를 먼저 갱신하고 새 시행일을 고지합니다.</p>
+      </section>
+
+      <section>
+        <h2>7. 지원 문의와 웹페이지</h2>
+        <p>사용자가 이메일로 문의하면 답변을 위해 발신 이메일 주소와 문의 내용을 처리합니다. 원본 영상이나 완성 Live Photo를 보내지 마세요. 문의 기록은 지원과 분쟁 대응에 필요한 기간만 보관하고, 삭제 요청이나 보관 필요성 종료 시 제거합니다.</p>
+        <p>지원 이메일은 Google Gmail을, 이 페이지는 GitHub Pages를 사용합니다. 이메일 전송 또는 페이지 접속 과정에서 각 제공자가 자체 방침에 따라 기본 통신·접속 정보를 처리할 수 있습니다. WakeMotion은 이 웹페이지에 자체 분석 스크립트나 광고 쿠키를 넣지 않습니다. 자세한 내용은 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>과 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 확인해 주세요.</p>
+      </section>
+
+      <section>
+        <h2>8. 사용자의 선택</h2>
+        <ul>
+          <li>iOS 설정에서 카메라·마이크·사진 권한 변경</li>
+          <li>WakeMotion 설정에서 iPhone 맞춤 profile 교체 또는 삭제</li>
+          <li>사진 보관함에서 완성 결과 삭제</li>
+          <li>앱 삭제로 앱 전용 파일 제거</li>
+          <li>지원 이메일을 통한 개인정보 문의 또는 지원 문의 기록 삭제 요청</li>
+        </ul>
+        <p>Keychain 항목은 앱 재설치 뒤 남을 수 있으므로, 가능하면 앱을 삭제하기 전에 WakeMotion 설정에서 맞춤 profile을 먼저 삭제해 주세요.</p>
+      </section>
+
+      <section>
+        <h2>9. 아동</h2>
+        <p>WakeMotion은 어린이를 대상으로 설계하거나 마케팅하지 않으며 계정이나 생년월일을 수집하지 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>10. 보안</h2>
+        <p>WakeMotion은 앱 sandbox, complete file protection, backup exclusion, atomic file write, AES-GCM과 ThisDeviceOnly Keychain을 사용해 앱 전용 임시 파일과 profile을 보호합니다. 어떤 방법도 절대적인 보안을 보장하지는 않습니다.</p>
+      </section>
+
+      <section>
+        <h2>11. 변경과 문의</h2>
+        <p>기능, SDK 또는 데이터 흐름이 바뀌면 이 방침과 시행일을 갱신합니다. 개인정보 관련 문의는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>으로 보내 주세요.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <span>© 2026 WakeMotion</span>
+    <a href="./">지원 홈</a>
+  </footer>
+</body>
+</html>
