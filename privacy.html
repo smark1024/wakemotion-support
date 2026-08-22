@@ -22,95 +22,142 @@
       <p class="eyebrow">PRIVACY</p>
       <h1>개인정보처리방침</h1>
       <dl class="metadata">
-        <div><dt>시행일</dt><dd>2026년 8월 22일</dd></div>
-        <div><dt>서비스 제공자</dt><dd>WakeMotion</dd></div>
-        <div><dt>문의</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
+        <div><dt>시행일</dt><dd>2026년 8월 23일</dd></div>
+        <div><dt>개인정보 처리 및 보호 담당</dt><dd>WakeMotion 운영자</dd></div>
+        <div><dt>연락처</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
       </dl>
     </section>
 
     <article class="policy-card">
       <section>
         <h2>1. 서비스 개요</h2>
-        <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하고 일반 동영상을 편집·저장하는 온디바이스 앱입니다. 계정, WakeMotion 서버 변환, SNS 다운로드 또는 공개 게시 기능은 제공하지 않습니다.</p>
+        <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하고 일반 동영상을 편집·저장하는 앱입니다. 영상 선택·편집·변환은 사용자의 iPhone 안에서 이루어집니다. WakeMotion 계정이나 로그인, 자체 서버 변환, SNS 다운로드 또는 공개 게시 기능은 제공하지 않습니다.</p>
         <p>무료 버전은 Google Mobile Ads를 이용한 배너 광고와 사용자가 저장 시 선택하는 보상형 광고를 제공하며, Google User Messaging Platform을 이용해 적용 지역의 개인정보 선택을 표시할 수 있습니다.</p>
       </section>
 
       <section>
         <h2>2. 앱이 기기 안에서 처리하는 정보</h2>
         <ul>
-          <li>Apple 시스템 사진 선택기에서 사용자가 명시적으로 고른 동영상</li>
-          <li>선택 구간, 대표 사진 시점, PIP·overlay 등 편집 설정, 임시 썸네일과 호환성 판단용 축소 밝기 표본</li>
-          <li>첫 설정에서 사용자가 직접 촬영한 Live Photo의 현재 기기 호환 정보</li>
-          <li>변환된 HEIC 사진과 무음 H.264 paired MOV 또는 일반 MP4</li>
+          <li>Apple 시스템 사진 선택기에서 사용자가 명시적으로 고른 기본·추가 동영상</li>
+          <li>사용자가 overlay로 고른 이미지와 직접 입력한 문구</li>
+          <li>선택 구간, 대표 사진 시점, PIP·overlay, 색감·효과 등 편집 설정과 임시 썸네일</li>
+          <li>잠금 화면 호환성 단계를 판단하기 위한 축소된 밝기 표본</li>
+          <li>첫 설정에서 직접 촬영한 Live Photo에서 추출한 현재 기기 호환 정보</li>
+          <li>선택한 잠금 화면 호환성 단계 같은 앱 설정</li>
+          <li>Live Photo 변환으로 생성된 HEIC 사진과 무음 H.264 paired MOV</li>
+          <li>비디오 스튜디오에서 내보낸 일반 MP4(사용자 선택에 따라 원본 오디오 유지 또는 음소거)</li>
         </ul>
-        <p>WakeMotion 운영자는 위 원본, 프레임, 호환 정보, 편집 내용 또는 완성 파일을 WakeMotion 서버로 전송하거나 수집하지 않습니다. 이러한 앱 고유 데이터는 광고 요청에도 넣지 않습니다.</p>
+        <p>WakeMotion 운영자는 위 원본, 이미지·프레임, 사용자 입력 문구, 호환 정보, 편집 내용 또는 완성 파일을 자체 서버로 전송하거나 수집하지 않습니다. 이러한 앱 고유 데이터는 Google 광고 요청에도 추가하지 않습니다.</p>
       </section>
 
       <section>
         <h2>3. iPhone 맞춤 촬영</h2>
-        <p>잠금 화면 호환성을 높이기 위해 사용자가 명시적으로 촬영 버튼을 누르면 카메라와 마이크 권한을 요청하고 Apple의 Live Photo 촬영 기능을 한 번 실행합니다. 마이크 권한은 Apple 촬영 파이프라인 구성에 필요하지만 WakeMotion이 만드는 최종 결과는 무음입니다.</p>
-        <p>촬영한 사진과 동영상 파일은 사진 보관함에 저장하지 않으며, 필요한 호환 정보를 추출한 직후 삭제합니다. 출력에 필요한 최소 profile만 Apple CryptoKit의 AES-GCM으로 암호화해 앱 전용 저장소에 보관하고, 암호 키는 다른 기기로 동기화되지 않는 ThisDeviceOnly Keychain에 저장합니다. iOS 버전·기기 모델·출력 규격이 달라지거나 사용자가 설정에서 삭제하면 profile과 키를 제거합니다.</p>
-        <p>호환 정보의 전체 내부 형식은 Apple이 공개하지 않았습니다. WakeMotion은 계정, 위치, 연락처, 얼굴, 사진 프레임, 오디오 또는 UDID를 의도적으로 profile에 넣지 않지만, 공개되지 않은 payload의 모든 필드 의미를 보증할 수는 없습니다. 같은 profile 일부는 사용자가 만드는 paired MOV 안에 포함되어 사진 보관함에 저장될 수 있습니다. WakeMotion은 이를 로그·분석·광고 요청·서버로 보내지 않습니다.</p>
+        <p>잠금 화면 호환성을 높이기 위해 사용자가 촬영 버튼을 누르면 카메라와 마이크 권한을 요청하고 Apple의 Live Photo 촬영 기능을 한 번 실행합니다. 이 촬영 과정의 임시 MOV에는 Apple 촬영 기능이 만든 오디오가 잠시 포함될 수 있지만, WakeMotion은 오디오 트랙을 읽거나 호환 정보에 저장하지 않습니다. WakeMotion이 만드는 Live Photo 결과에는 오디오 트랙이 포함되지 않습니다. 별도의 비디오 스튜디오에서 내보내는 일반 MP4는 사용자의 음소거 선택에 따라 원본 오디오를 유지할 수 있습니다.</p>
+        <p>촬영한 사진과 동영상 파일은 사진 보관함에 저장하지 않으며, 호환 정보 추출이 성공하거나 실패하면 임시 작업 폴더와 함께 삭제합니다. 이후 변환에 필요한 최소 기기 맞춤 정보만 Apple CryptoKit의 AES-GCM으로 암호화해 앱 전용 저장소에 보관합니다. 여기에는 profile 생성 시각, iOS 버전, 기기 모델 식별자, 출력 profile 버전과 Apple이 만든 불투명한 Live Photo 호환 payload가 포함됩니다. 암호 키는 다른 기기로 동기화되지 않는 ThisDeviceOnly Keychain에 저장합니다. iOS 버전·기기 모델·출력 규격이 달라지거나 사용자가 설정에서 삭제하면 암호화된 profile과 키를 제거합니다.</p>
+        <p>호환 payload의 전체 내부 형식은 Apple이 공개하지 않았습니다. WakeMotion은 계정, 위치, 연락처, 얼굴, 사진 프레임, 오디오 또는 UDID를 의도적으로 profile에 넣지 않지만, 공개되지 않은 payload의 모든 필드 의미를 보증할 수는 없습니다. 같은 profile 일부는 사용자가 만드는 paired MOV 안에 포함되어 사진 보관함에 저장될 수 있습니다. WakeMotion은 이 정보를 자체 로그·분석·광고 요청·서버로 보내지 않습니다.</p>
       </section>
 
       <section>
         <h2>4. 사진 보관함과 권한</h2>
-        <p>동영상 선택은 Apple PhotosPicker를 사용하므로 WakeMotion이 사용자의 전체 사진 목록을 열람하지 않습니다. 완성 결과를 저장할 때만 사진 추가 전용 권한을 요청합니다. 사용자가 iCloud Photos를 켠 경우 저장한 결과는 Apple 설정에 따라 iCloud로 동기화될 수 있으며, 이는 WakeMotion 서버 전송이 아닙니다.</p>
+        <p>동영상과 overlay 이미지는 Apple의 시스템 PhotosPicker에서 사용자가 항목을 직접 고릅니다. WakeMotion은 이를 통해 사용자의 전체 사진 목록을 열람하거나 임의의 항목을 가져오지 않습니다. 완성한 Live Photo 또는 일반 MP4를 저장할 때에는 사진 추가 전용 권한만 요청합니다.</p>
+        <p>저장한 결과는 사용자가 직접 관리합니다. iCloud Photos를 켠 경우 Apple 설정에 따라 결과가 iCloud로 동기화될 수 있으며, 이는 WakeMotion 자체 서버 전송이 아닙니다. 일반 MP4에서 사용자가 <code>동영상 공유하기</code>를 누르면 Apple 시스템 공유 시트가 열리고, 사용자가 직접 고른 앱이나 사람에게 파일이 전달될 수 있습니다. 이때 선택한 외부 서비스의 개인정보 처리방침이 적용됩니다.</p>
       </section>
 
       <section>
-        <h2>5. 보관과 삭제</h2>
-        <ul>
-          <li>선택 영상과 변환 임시 파일: 교체, 취소, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
-          <li>맞춤 촬영 HEIC/MOV: 추출 성공 또는 실패 직후 삭제</li>
-          <li>암호화된 기기 profile: 사용자가 설정에서 삭제, 앱 삭제, 환경 불일치 또는 복호화 실패 때 삭제</li>
-          <li>사진 보관함에 저장된 결과: 사용자가 Apple Photos에서 직접 관리</li>
-        </ul>
-        <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다.</p>
-        <p>WakeMotion은 별도의 광고 데이터 사본이나 자체 사용자별 광고 profile을 보관하지 않습니다. Google SDK가 처리하는 광고·동의 데이터의 보관 기간, 처리 위치와 삭제는 Google의 정책과 사용자의 선택에 따르며 대한민국 밖에서 처리될 수 있습니다.</p>
-      </section>
-
-      <section>
-        <h2>6. 광고와 동의 관리</h2>
+        <h2>5. 광고와 자동 수집</h2>
         <p>WakeMotion 무료 버전은 Google Mobile Ads SDK와 Google User Messaging Platform SDK를 사용합니다. 광고 제공, 광고 빈도·성과 측정, 부정행위 방지, 동의 상태 처리와 SDK 개선을 위해 Google SDK는 IP 주소에서 파생될 수 있는 대략적 위치, 기기 또는 광고 관련 식별자, 광고 데이터, 앱 내 제품 상호 작용, 충돌·성능·기타 진단 데이터를 수집하거나 처리할 수 있습니다.</p>
-        <p>데이터 유형에 따라 타사 광고, 개발자의 마케팅, 분석 또는 앱 기능 제공 목적으로 사용되고 사용자나 기기에 연결되거나 추적에 사용될 수 있습니다. 실제 처리는 사용자의 지역, 동의 선택, 기기 설정과 Google 정책에 따라 달라질 수 있습니다. 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>에서 확인할 수 있습니다.</p>
+        <p>데이터 유형에 따라 타사 광고, 개발자의 마케팅, 분석 또는 앱 기능 제공 목적으로 사용되고 사용자나 기기에 연결되거나 추적에 사용될 수 있습니다. 실제 처리는 사용자의 지역, 동의 선택, 기기 설정과 Google 정책에 따라 달라질 수 있습니다. 자세한 내용은 <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google Mobile Ads SDK의 App Store 데이터 공개 안내</a>와 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>에서 확인할 수 있습니다.</p>
+        <p>WakeMotion은 개인 맞춤 광고와 Google의 publisher first-party ID 사용을 끄고, 가장 보수적인 <code>General</code> 광고 콘텐츠 등급을 적용하도록 코드를 구성했습니다. 다만 개인 맞춤이 아닌 광고도 노출 횟수 제한, 집계 보고와 부정행위 방지를 위해 쿠키 또는 모바일 식별자를 사용할 수 있습니다.</p>
+        <p>이 정보는 WakeMotion이 자체 사용자 계정이나 광고 profile을 만들기 위해 직접 입력받는 정보가 아닙니다. UMP 상태 확인, 광고 요청·표시·상호 작용 또는 SDK 진단이 발생할 때 Google SDK가 네트워크를 통해 자동으로 처리할 수 있습니다. 모바일 식별자와 광고 관련 설정은 iOS의 개인정보 보호 및 광고 설정, Google이 제공하는 개인정보 관리 수단과 적용 지역의 동의 화면에서 관리할 수 있습니다.</p>
         <p>적용 지역에서는 동의, 동의하지 않음 또는 옵션 관리 선택지가 표시될 수 있습니다. 개인정보 옵션을 다시 제공해야 하는 지역에서는 WakeMotion 설정에서 선택을 검토할 수 있습니다.</p>
         <p>현재 앱은 Apple의 앱 추적 투명성 권한 요청을 자체적으로 표시하지 않습니다. 다만 포함된 Google 광고 SDK의 개인정보 manifest는 기기 ID가 추적 목적으로 사용될 수 있다고 선언하므로 WakeMotion은 App Store 개인정보 표시에 이를 보수적으로 공개합니다.</p>
-        <p>WakeMotion은 사용자 동영상·파일명·프레임·썸네일·편집 정보·iPhone 맞춤 profile·Live Photo metadata·완성 파일·진단 코드를 광고 요청에 넣지 않습니다. Firebase Analytics, Google Analytics, 별도 crash-reporting SDK, 광고 mediation, 자체 계정이나 backend도 사용하지 않습니다.</p>
       </section>
 
       <section>
-        <h2>7. 지원 문의와 웹페이지</h2>
-        <p>사용자가 이메일로 문의하면 답변을 위해 발신 이메일 주소와 문의 내용을 처리합니다. 원본 영상이나 완성 Live Photo를 보내지 마세요. 문의 기록은 지원과 분쟁 대응에 필요한 기간만 보관하고, 삭제 요청이나 보관 필요성 종료 시 제거합니다.</p>
+        <h2>6. 광고 요청에 추가하지 않는 사용자 콘텐츠</h2>
+        <p>Google 광고 SDK는 5절에 설명한 기기·광고 관련 정보를 자체적으로 처리할 수 있습니다. 다만 WakeMotion은 다음 사용자 콘텐츠와 앱 고유 정보를 Google 광고 요청의 사용자 지정 parameter, request extras 또는 자체 광고 로그에 넣지 않습니다.</p>
+        <ul>
+          <li>사용자가 선택한 동영상, 파일명, 프레임과 임시 썸네일</li>
+          <li>사용자가 overlay로 고른 이미지와 입력한 문구</li>
+          <li>대표 사진, 편집 구간, PIP·overlay·색감·효과 설정</li>
+          <li>iPhone 맞춤 profile과 Live Photo metadata</li>
+          <li>생성된 HEIC/MOV/MP4 결과</li>
+          <li><code>WM-…</code> 진단 코드</li>
+        </ul>
+        <p>WakeMotion은 Firebase Analytics, Google Analytics, 별도 충돌 보고 SDK, 광고 중개 SDK(mediation), 자체 계정 또는 자체 서버 시스템(backend)을 사용하지 않습니다. AdMob 화면에 표시되는 광고 노출·클릭·수익 통계는 Google 광고 SDK와 AdMob이 제공하는 것이며, WakeMotion이 별도 분석 도구로 중복 수집하는 정보가 아닙니다.</p>
+      </section>
+
+      <section>
+        <h2>7. 보관과 파기</h2>
+        <ul>
+          <li>선택한 기본·추가 영상: 교체, 선택 취소, 편집기 종료 또는 다음 앱 실행 때 앱 임시 저장소에서 삭제</li>
+          <li>overlay 이미지·입력 문구·썸네일·축소 밝기 표본: 편집 중 메모리에서만 사용하고 편집 화면 또는 처리 작업이 끝나면 제거</li>
+          <li>Live Photo 변환용 HEIC/MOV 임시 결과: 다른 결과 생성, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
+          <li>일반 MP4 임시 내보내기 파일: 사진 저장과 공유에 사용한 뒤 성공 화면 종료, 편집 계속, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
+          <li>맞춤 촬영 HEIC/MOV: 호환 정보 추출 성공 또는 실패 직후 임시 작업 폴더와 함께 삭제</li>
+          <li>암호화된 기기 profile: 사용자가 설정에서 삭제, 앱 삭제, 환경 불일치 또는 복호화 실패 때 삭제. 앱 삭제 시 profile 파일은 제거되지만 Keychain 키는 남을 수 있음</li>
+          <li>잠금 화면 호환성 단계 설정: 사용자가 변경하거나 앱 데이터를 삭제할 때까지 기기 UserDefaults에 보관</li>
+          <li>사진 보관함에 저장된 결과: 사용자가 Apple Photos에서 직접 관리</li>
+        </ul>
+        <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다. 시스템 공유 시트로 사용자가 직접 보낸 일반 MP4 사본은 사용자가 선택한 수신 앱이나 서비스의 보관 정책에 따릅니다. 삭제 대상 앱 파일은 iOS 파일 API를 통해 앱 전용 저장소에서 제거하고, 암호화 profile을 앱 설정에서 삭제할 때에는 해당 암호문과 ThisDeviceOnly Keychain 키를 함께 제거합니다. 앱 삭제 시 Keychain 항목은 남을 수 있으므로 가능하면 삭제 전에 WakeMotion 설정에서 profile 삭제를 실행해 주세요.</p>
+        <p>WakeMotion은 별도의 광고 데이터 사본이나 자체 사용자별 광고 profile을 보관하지 않습니다. Google SDK가 처리하는 정보는 Google 정책에 따릅니다. Google은 데이터 종류·이용 목적·사용자 설정에 따라 보관 기간이 달라질 수 있고 광고 서버 로그의 IP 일부는 9개월 뒤, 쿠키 정보는 18개월 뒤 익명화하며, 보안·부정행위 방지·법적 의무에는 더 긴 기간이 적용될 수 있다고 공개합니다. 자세한 내용은 <a href="https://policies.google.com/technologies/retention?hl=ko">Google 데이터 보관 정책</a>을 확인해 주세요.</p>
+      </section>
+
+      <section>
+        <h2>8. 국외 처리</h2>
+        <p>WakeMotion은 자체 서버로 사용자 미디어나 광고 데이터를 국외 이전하지 않습니다. 다만 아래 외부 서비스는 대한민국 밖의 서버에서 정보를 처리할 수 있습니다.</p>
+        <h3>Google Mobile Ads 및 UMP</h3>
+        <ul>
+          <li>받는 자·연락처: Google LLC · <a href="https://support.google.com/policies/troubleshooter/7575787?hl=ko">Google 개인정보 문의</a></li>
+          <li>정보: 대략적 위치, 기기·광고 관련 식별자, 광고 데이터, 제품 상호 작용, 충돌·성능·기타 진단, 동의 상태</li>
+          <li>국가·시기·방법: 미국 및 Google 또는 그 수탁자가 시설을 운영하는 국가에서 처리될 수 있으며, UMP 상태 확인과 광고 요청·표시·상호 작용 시 네트워크로 전송</li>
+          <li>목적: 광고 제공·빈도 및 성과 측정, 부정행위 방지, 동의 상태 처리, SDK 개선</li>
+          <li>기간: 데이터 종류·목적·설정에 따라 다름. 광고 서버 로그 IP 일부 9개월 뒤, 쿠키 정보 18개월 뒤 익명화하며 일부 보안·법적 기록은 더 오래 보관될 수 있음</li>
+          <li>거부와 영향: iOS·Google 개인정보 설정과 적용 지역 동의 화면에서 가능한 선택을 변경하거나 네트워크 사용 중단 또는 앱 삭제로 이후 처리를 중단할 수 있음. 광고가 로드되지 않을 수 있으나 WakeMotion은 광고 실패만으로 편집 결과를 삭제하지 않음</li>
+        </ul>
+        <h3>지원 이메일과 지원 페이지</h3>
+        <ul>
+          <li>Gmail: 사용자가 이메일을 보낼 때 발신 주소와 문의 내용이 미국 및 Google이 시설을 운영하는 국가에서 문의 답변·중복 문의 확인·권리 요청·분쟁 대응 목적으로 처리될 수 있음. 일반 문의는 수신일로부터 최대 1년 보관하고 매월 정기 점검에서 11개월이 지난 기록을 지원 Gmail 계정에서 삭제한 뒤 휴지통을 비움. 진행 중인 요청·분쟁 또는 법령상 의무가 있으면 해당 사유 종료 시까지 필요한 범위에서 보관. 이메일을 보내지 않아도 앱 기본 기능 이용 가능</li>
+          <li>GitHub Pages: 사용자가 지원 페이지에 접속할 때 IP 주소, 브라우저·통신 로그 등 기본 접속 정보가 미국 등 GitHub 또는 서비스 제공자가 시설을 운영하는 국가에서 페이지 제공·보안·장애 대응 목적으로 처리될 수 있음. 기간은 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 따르며, 페이지에 접속하지 않아도 앱 기본 기능 이용 가능</li>
+        </ul>
+        <p>Google은 전 세계에 서버를 운영하며 실제 처리 위치가 요청마다 달라질 수 있다고 공개합니다. 제공자, 처리 국가, 보관 정책 또는 SDK 구성이 바뀌면 이 내용도 갱신합니다.</p>
+      </section>
+
+      <section>
+        <h2>9. 지원 문의와 웹페이지</h2>
+        <p>사용자가 이메일로 문의하면 답변, 중복 문의 확인과 필요한 분쟁 대응을 위해 발신 이메일 주소와 문의 내용을 처리합니다. 문의 제공은 선택이며 보내지 않아도 앱의 기본 기능을 이용할 수 있습니다. 원본 영상, 완성 Live Photo, 계정 비밀번호, 인증번호, 금융정보를 보내지 마세요. 일반 문의 기록은 수신일로부터 최대 1년 보관합니다. 매월 정기 점검에서 11개월이 지난 일반 문의를 지원 Gmail 계정에서 삭제하고 휴지통을 비웁니다. 사용자가 삭제를 요청하면 법령상 제한 사유가 없는 한 지체 없이 처리합니다. 진행 중인 권리 요청·분쟁 또는 법령상 보관 의무가 있는 기록은 일반 문의와 구분해 필요한 기간만 보관하고 해당 사유가 끝난 뒤 지체 없이 삭제합니다. Gmail 제공자의 백업·삭제 처리에는 Google 정책에 따른 기간이 추가로 적용될 수 있습니다.</p>
         <p>지원 이메일은 Google Gmail을, 이 페이지는 GitHub Pages를 사용합니다. 이메일 전송 또는 페이지 접속 과정에서 각 제공자가 자체 방침에 따라 기본 통신·접속 정보를 처리할 수 있습니다. WakeMotion은 이 웹페이지에 자체 분석 스크립트나 광고 쿠키를 넣지 않습니다. 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>과 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 확인해 주세요.</p>
       </section>
 
       <section>
-        <h2>8. 사용자의 선택</h2>
+        <h2>10. 사용자의 권리와 선택</h2>
         <ul>
           <li>iOS 설정에서 카메라·마이크·사진 권한 변경</li>
           <li>WakeMotion 설정에서 개인정보 선택 메뉴가 표시될 때 광고 동의 옵션 검토</li>
           <li>WakeMotion 설정에서 iPhone 맞춤 profile 교체 또는 삭제</li>
+          <li>WakeMotion 편집기에서 선택한 영상·이미지·문구를 교체하거나 제거</li>
           <li>사진 보관함에서 완성 결과 삭제</li>
+          <li>시스템 공유 시트에서 일반 MP4의 공유 대상 선택 또는 공유 취소</li>
           <li>앱 삭제로 앱 전용 파일 제거</li>
           <li>지원 이메일을 통한 개인정보 문의 또는 지원 문의 기록 삭제 요청</li>
         </ul>
+        <p>사용자는 이메일로 본인과 관련하여 WakeMotion 운영자가 보유한 개인정보의 열람, 정정, 삭제 또는 처리정지를 요청할 수 있습니다. 요청자의 정보 보호를 위해 필요한 범위에서 본인 확인을 요청할 수 있으며, 법령에서 정한 제한 사유가 없다면 지체 없이 처리하고 결과를 알립니다. WakeMotion이 보유하지 않고 Google, Apple 또는 GitHub가 자체 정책에 따라 처리하는 정보는 해당 제공자의 개인정보 관리 수단과 문의 창구를 이용해야 할 수 있습니다.</p>
         <p>Keychain 항목은 앱 재설치 뒤 남을 수 있으므로, 가능하면 앱을 삭제하기 전에 WakeMotion 설정에서 맞춤 profile을 먼저 삭제해 주세요.</p>
       </section>
 
       <section>
-        <h2>9. 아동</h2>
-        <p>WakeMotion은 어린이를 대상으로 설계하거나 마케팅하지 않으며 계정이나 생년월일을 수집하지 않습니다. 광고와 관련된 연령·동의 설정은 출시 국가의 요구사항과 App Store 연령 등급을 기준으로 검토합니다.</p>
+        <h2>11. 아동</h2>
+        <p>WakeMotion은 만 14세 미만 아동을 대상으로 설계하거나 마케팅하지 않으며 계정이나 생년월일을 수집하지 않습니다. 운영 광고를 활성화하기 전에 App Store 연령 등급과 일치하는 AdMob 콘텐츠 등급 및 아동 대상 여부 설정을 확인합니다. 향후 아동 대상 기능이나 광고 정책으로 바꾸는 경우 법정대리인 동의와 광고 제한을 별도로 검토하고 이 방침을 먼저 갱신합니다.</p>
       </section>
 
       <section>
-        <h2>10. 보안</h2>
-        <p>WakeMotion은 앱 sandbox, complete file protection, backup exclusion, atomic file write, AES-GCM과 ThisDeviceOnly Keychain을 사용해 앱 전용 임시 파일과 profile을 보호합니다. 어떤 방법도 절대적인 보안을 보장하지는 않습니다.</p>
+        <h2>12. 보안</h2>
+        <p>WakeMotion은 iOS 앱 sandbox, 파일 잠금 중 보호(complete file protection), 백업 제외, 안전한 임시 파일 이동, AES-GCM 암호화와 다른 기기로 동기화되지 않는 ThisDeviceOnly Keychain을 사용해 앱 전용 임시 파일과 기기 맞춤 profile을 보호합니다. 어떤 방법도 절대적인 보안을 보장하지는 않습니다.</p>
       </section>
 
       <section>
-        <h2>11. 변경과 문의</h2>
-        <p>기능, SDK 또는 데이터 흐름이 바뀌면 이 방침과 시행일을 갱신합니다. 개인정보 관련 문의는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>으로 보내 주세요.</p>
+        <h2>13. 변경과 문의</h2>
+        <p>기능, SDK, 제공자 또는 데이터 흐름이 바뀌면 이 페이지의 시행일과 변경 내용을 갱신합니다. 중요한 변경은 시행 전에 지원 페이지에서 쉽게 확인할 수 있도록 알립니다. 개인정보 처리 및 보호 담당은 WakeMotion 운영자이며 연락처는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>입니다.</p>
       </section>
     </article>
   </main>
