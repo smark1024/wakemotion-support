@@ -22,7 +22,7 @@
       <p class="eyebrow">PRIVACY</p>
       <h1>개인정보처리방침</h1>
       <dl class="metadata">
-        <div><dt>시행일</dt><dd>2026년 8월 23일</dd></div>
+        <div><dt>시행일</dt><dd>2026년 8월 29일</dd></div>
         <div><dt>개인정보 처리 및 보호 담당</dt><dd>WakeMotion 운영자</dd></div>
         <div><dt>연락처</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
       </dl>
@@ -31,7 +31,7 @@
     <article class="policy-card">
       <section>
         <h2>1. 서비스 개요</h2>
-        <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하고 일반 동영상을 편집·저장하는 앱입니다. 영상 선택·편집·변환은 사용자의 iPhone 안에서 이루어집니다. WakeMotion 계정이나 로그인, 자체 서버 변환, SNS 다운로드 또는 공개 게시 기능은 제공하지 않습니다.</p>
+        <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하고 일반 동영상을 편집해 MP4 또는 움직이는 GIF로 저장하는 앱입니다. 영상 선택·편집·변환은 사용자의 iPhone 안에서 이루어집니다. WakeMotion 계정이나 로그인, 자체 서버 변환, SNS 다운로드 또는 공개 게시 기능은 제공하지 않습니다.</p>
         <p>무료 버전은 Google Mobile Ads를 이용한 배너 광고와 사용자가 저장 시 선택하는 보상형 광고를 제공하며, Google User Messaging Platform을 이용해 적용 지역의 개인정보 선택을 표시할 수 있습니다.</p>
       </section>
 
@@ -46,21 +46,22 @@
           <li>선택한 잠금 화면 호환성 단계 같은 앱 설정</li>
           <li>Live Photo 변환으로 생성된 HEIC 사진과 무음 H.264 paired MOV</li>
           <li>비디오 스튜디오에서 내보낸 일반 MP4(사용자 선택에 따라 원본 오디오 유지 또는 음소거)</li>
+          <li>비디오 스튜디오에서 Apple 공개 프레임워크로 만든 무음 animated GIF</li>
         </ul>
         <p>WakeMotion 운영자는 위 원본, 이미지·프레임, 사용자 입력 문구, 호환 정보, 편집 내용 또는 완성 파일을 자체 서버로 전송하거나 수집하지 않습니다. 이러한 앱 고유 데이터는 Google 광고 요청에도 추가하지 않습니다.</p>
       </section>
 
       <section>
         <h2>3. iPhone 맞춤 촬영</h2>
-        <p>잠금 화면 호환성을 높이기 위해 사용자가 촬영 버튼을 누르면 카메라와 마이크 권한을 요청하고 Apple의 Live Photo 촬영 기능을 한 번 실행합니다. 이 촬영 과정의 임시 MOV에는 Apple 촬영 기능이 만든 오디오가 잠시 포함될 수 있지만, WakeMotion은 오디오 트랙을 읽거나 호환 정보에 저장하지 않습니다. WakeMotion이 만드는 Live Photo 결과에는 오디오 트랙이 포함되지 않습니다. 별도의 비디오 스튜디오에서 내보내는 일반 MP4는 사용자의 음소거 선택에 따라 원본 오디오를 유지할 수 있습니다.</p>
+        <p>잠금 화면 호환성을 높이기 위해 사용자가 촬영 버튼을 누르면 카메라와 마이크 권한을 요청하고 Apple의 Live Photo 촬영 기능을 한 번 실행합니다. 이 촬영 과정의 임시 MOV에는 Apple 촬영 기능이 만든 오디오가 잠시 포함될 수 있지만, WakeMotion은 오디오 트랙을 읽거나 호환 정보에 저장하지 않습니다. WakeMotion이 만드는 Live Photo와 GIF 결과에는 오디오 트랙이 포함되지 않습니다. 별도의 비디오 스튜디오에서 내보내는 일반 MP4는 사용자의 음소거 선택에 따라 원본 오디오를 유지할 수 있습니다.</p>
         <p>촬영한 사진과 동영상 파일은 사진 보관함에 저장하지 않으며, 호환 정보 추출이 성공하거나 실패하면 임시 작업 폴더와 함께 삭제합니다. 이후 변환에 필요한 최소 기기 맞춤 정보만 Apple CryptoKit의 AES-GCM으로 암호화해 앱 전용 저장소에 보관합니다. 여기에는 profile 생성 시각, iOS 버전, 기기 모델 식별자, 출력 profile 버전과 Apple이 만든 불투명한 Live Photo 호환 payload가 포함됩니다. 암호 키는 다른 기기로 동기화되지 않는 ThisDeviceOnly Keychain에 저장합니다. iOS 버전·기기 모델·출력 규격이 달라지거나 사용자가 설정에서 삭제하면 암호화된 profile과 키를 제거합니다.</p>
         <p>호환 payload의 전체 내부 형식은 Apple이 공개하지 않았습니다. WakeMotion은 계정, 위치, 연락처, 얼굴, 사진 프레임, 오디오 또는 UDID를 의도적으로 profile에 넣지 않지만, 공개되지 않은 payload의 모든 필드 의미를 보증할 수는 없습니다. 같은 profile 일부는 사용자가 만드는 paired MOV 안에 포함되어 사진 보관함에 저장될 수 있습니다. WakeMotion은 이 정보를 자체 로그·분석·광고 요청·서버로 보내지 않습니다.</p>
       </section>
 
       <section>
         <h2>4. 사진 보관함과 권한</h2>
-        <p>동영상과 overlay 이미지는 Apple의 시스템 PhotosPicker에서 사용자가 항목을 직접 고릅니다. WakeMotion은 이를 통해 사용자의 전체 사진 목록을 열람하거나 임의의 항목을 가져오지 않습니다. 완성한 Live Photo 또는 일반 MP4를 저장할 때에는 사진 추가 전용 권한만 요청합니다.</p>
-        <p>저장한 결과는 사용자가 직접 관리합니다. iCloud Photos를 켠 경우 Apple 설정에 따라 결과가 iCloud로 동기화될 수 있으며, 이는 WakeMotion 자체 서버 전송이 아닙니다. 일반 MP4에서 사용자가 <code>동영상 공유하기</code>를 누르면 Apple 시스템 공유 시트가 열리고, 사용자가 직접 고른 앱이나 사람에게 파일이 전달될 수 있습니다. 이때 선택한 외부 서비스의 개인정보 처리방침이 적용됩니다.</p>
+        <p>동영상과 overlay 이미지는 Apple의 시스템 PhotosPicker에서 사용자가 항목을 직접 고릅니다. WakeMotion은 이를 통해 사용자의 전체 사진 목록을 열람하거나 임의의 항목을 가져오지 않습니다. 완성한 Live Photo, 일반 MP4 또는 GIF를 저장할 때에는 사진 추가 전용 권한만 요청합니다.</p>
+        <p>저장한 결과는 사용자가 직접 관리합니다. iCloud Photos를 켠 경우 Apple 설정에 따라 결과가 iCloud로 동기화될 수 있으며, 이는 WakeMotion 자체 서버 전송이 아닙니다. 일반 MP4의 <code>동영상 공유하기</code> 또는 GIF의 <code>GIF 공유하기</code>를 누르면 Apple 시스템 공유 시트가 열리고, 사용자가 직접 고른 앱이나 사람에게 파일이 전달될 수 있습니다. 이때 선택한 외부 서비스의 개인정보 처리방침이 적용됩니다.</p>
       </section>
 
       <section>
@@ -81,7 +82,7 @@
           <li>사용자가 overlay로 고른 이미지와 입력한 문구</li>
           <li>대표 사진, 편집 구간, PIP·overlay·색감·효과 설정</li>
           <li>iPhone 맞춤 profile과 Live Photo metadata</li>
-          <li>생성된 HEIC/MOV/MP4 결과</li>
+          <li>생성된 HEIC/MOV/MP4/GIF 결과</li>
           <li><code>WM-…</code> 진단 코드</li>
         </ul>
         <p>WakeMotion은 Firebase Analytics, Google Analytics, 별도 충돌 보고 SDK, 광고 중개 SDK(mediation), 자체 계정 또는 자체 서버 시스템(backend)을 사용하지 않습니다. AdMob 화면에 표시되는 광고 노출·클릭·수익 통계는 Google 광고 SDK와 AdMob이 제공하는 것이며, WakeMotion이 별도 분석 도구로 중복 수집하는 정보가 아닙니다.</p>
@@ -93,13 +94,13 @@
           <li>선택한 기본·추가 영상: 교체, 선택 취소, 편집기 종료 또는 다음 앱 실행 때 앱 임시 저장소에서 삭제</li>
           <li>overlay 이미지·입력 문구·썸네일·축소 밝기 표본: 편집 중 메모리에서만 사용하고 편집 화면 또는 처리 작업이 끝나면 제거</li>
           <li>Live Photo 변환용 HEIC/MOV 임시 결과: 다른 결과 생성, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
-          <li>일반 MP4 임시 내보내기 파일: 사진 저장과 공유에 사용한 뒤 성공 화면 종료, 편집 계속, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
+          <li>일반 MP4 또는 GIF 임시 내보내기 파일: 사진 저장과 공유에 사용한 뒤 성공 화면 종료, 편집 계속, 편집기 종료 또는 다음 앱 실행 때 삭제</li>
           <li>맞춤 촬영 HEIC/MOV: 호환 정보 추출 성공 또는 실패 직후 임시 작업 폴더와 함께 삭제</li>
           <li>암호화된 기기 profile: 사용자가 설정에서 삭제, 앱 삭제, 환경 불일치 또는 복호화 실패 때 삭제. 앱 삭제 시 profile 파일은 제거되지만 Keychain 키는 남을 수 있음</li>
           <li>잠금 화면 호환성 단계 설정: 사용자가 변경하거나 앱 데이터를 삭제할 때까지 기기 UserDefaults에 보관</li>
           <li>사진 보관함에 저장된 결과: 사용자가 Apple Photos에서 직접 관리</li>
         </ul>
-        <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다. 시스템 공유 시트로 사용자가 직접 보낸 일반 MP4 사본은 사용자가 선택한 수신 앱이나 서비스의 보관 정책에 따릅니다. 삭제 대상 앱 파일은 iOS 파일 API를 통해 앱 전용 저장소에서 제거하고, 암호화 profile을 앱 설정에서 삭제할 때에는 해당 암호문과 ThisDeviceOnly Keychain 키를 함께 제거합니다. 앱 삭제 시 Keychain 항목은 남을 수 있으므로 가능하면 삭제 전에 WakeMotion 설정에서 profile 삭제를 실행해 주세요.</p>
+        <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다. 시스템 공유 시트로 사용자가 직접 보낸 일반 MP4 또는 GIF 사본은 사용자가 선택한 수신 앱이나 서비스의 보관 정책에 따릅니다. 삭제 대상 앱 파일은 iOS 파일 API를 통해 앱 전용 저장소에서 제거하고, 암호화 profile을 앱 설정에서 삭제할 때에는 해당 암호문과 ThisDeviceOnly Keychain 키를 함께 제거합니다. 앱 삭제 시 Keychain 항목은 남을 수 있으므로 가능하면 삭제 전에 WakeMotion 설정에서 profile 삭제를 실행해 주세요.</p>
         <p>WakeMotion은 별도의 광고 데이터 사본이나 자체 사용자별 광고 profile을 보관하지 않습니다. Google SDK가 처리하는 정보는 Google 정책에 따릅니다. Google은 데이터 종류·이용 목적·사용자 설정에 따라 보관 기간이 달라질 수 있고 광고 서버 로그의 IP 일부는 9개월 뒤, 쿠키 정보는 18개월 뒤 익명화하며, 보안·부정행위 방지·법적 의무에는 더 긴 기간이 적용될 수 있다고 공개합니다. 자세한 내용은 <a href="https://policies.google.com/technologies/retention?hl=ko">Google 데이터 보관 정책</a>을 확인해 주세요.</p>
       </section>
 
@@ -137,7 +138,7 @@
           <li>WakeMotion 설정에서 iPhone 맞춤 profile 교체 또는 삭제</li>
           <li>WakeMotion 편집기에서 선택한 영상·이미지·문구를 교체하거나 제거</li>
           <li>사진 보관함에서 완성 결과 삭제</li>
-          <li>시스템 공유 시트에서 일반 MP4의 공유 대상 선택 또는 공유 취소</li>
+          <li>시스템 공유 시트에서 일반 MP4 또는 GIF의 공유 대상 선택 또는 공유 취소</li>
           <li>앱 삭제로 앱 전용 파일 제거</li>
           <li>지원 이메일을 통한 개인정보 문의 또는 지원 문의 기록 삭제 요청</li>
         </ul>
@@ -158,6 +159,7 @@
       <section>
         <h2>13. 변경과 문의</h2>
         <p>기능, SDK, 제공자 또는 데이터 흐름이 바뀌면 이 페이지의 시행일과 변경 내용을 갱신합니다. 중요한 변경은 시행 전에 지원 페이지에서 쉽게 확인할 수 있도록 알립니다. 개인정보 처리 및 보호 담당은 WakeMotion 운영자이며 연락처는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>입니다.</p>
+        <p>2026년 8월 29일: Video Studio의 온디바이스 무음 GIF 생성, Photos 저장, 시스템 공유와 임시파일 처리 설명을 추가했습니다. 새 SDK, 계정, 서버, 분석, 추적 또는 App Privacy 수집 데이터 유형은 추가하지 않았습니다.</p>
       </section>
     </article>
   </main>
