@@ -22,7 +22,7 @@
       <p class="eyebrow">PRIVACY</p>
       <h1>개인정보처리방침</h1>
       <dl class="metadata">
-        <div><dt>시행일</dt><dd>2026년 8월 29일</dd></div>
+        <div><dt>시행일</dt><dd>2026년 9월 2일</dd></div>
         <div><dt>개인정보 처리 및 보호 담당</dt><dd>WakeMotion 운영자</dd></div>
         <div><dt>연락처</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
       </dl>
@@ -32,13 +32,15 @@
       <section>
         <h2>1. 서비스 개요</h2>
         <p>WakeMotion은 사용자가 직접 선택한 동영상의 일부를 iPhone 잠금 화면용 Live Photo로 변환하고 일반 동영상을 편집해 MP4 또는 움직이는 GIF로 저장하는 앱입니다. 영상 선택·편집·변환은 사용자의 iPhone 안에서 이루어집니다. WakeMotion 계정이나 로그인, 자체 서버 변환, SNS 다운로드 또는 공개 게시 기능은 제공하지 않습니다.</p>
-        <p>무료 버전은 Google Mobile Ads를 이용한 배너 광고와 사용자가 저장 시 선택하는 보상형 광고를 제공하며, Google User Messaging Platform을 이용해 적용 지역의 개인정보 선택을 표시할 수 있습니다.</p>
+        <p>무료 버전은 Google Mobile Ads를 이용해 사용자가 저장 시 선택하는 보상형 광고를 제공하며 하단 배너 광고는 표시하지 않습니다. Google User Messaging Platform을 이용해 적용 지역의 개인정보 선택을 표시할 수 있습니다.</p>
+        <p>WakeMotion 1.1은 WakeMotion이 공개용으로 승인한 생성형 AI 추천 모션의 목록·미리보기와 사용자가 고른 추천 원본을 읽기 전용 Cloudflare 전송 경로에서 내려받을 수 있습니다. 사용자의 사진 보관함 영상, 편집 정보, iPhone 맞춤 profile과 완성 결과는 이 경로로 업로드하지 않습니다.</p>
       </section>
 
       <section>
         <h2>2. 앱이 기기 안에서 처리하는 정보</h2>
         <ul>
           <li>Apple 시스템 사진 선택기에서 사용자가 명시적으로 고른 기본·추가 동영상</li>
+          <li>WakeMotion이 제공하는 원격 추천 목록·미리보기와 사용자가 명시적으로 내려받은 추천 원본</li>
           <li>사용자가 overlay로 고른 이미지와 직접 입력한 문구</li>
           <li>선택 구간, 대표 사진 시점, PIP·overlay, 색감·효과 등 편집 설정과 임시 썸네일</li>
           <li>잠금 화면 호환성 단계를 판단하기 위한 축소된 밝기 표본</li>
@@ -49,6 +51,7 @@
           <li>비디오 스튜디오에서 Apple 공개 프레임워크로 만든 무음 animated GIF</li>
         </ul>
         <p>WakeMotion 운영자는 위 원본, 이미지·프레임, 사용자 입력 문구, 호환 정보, 편집 내용 또는 완성 파일을 자체 서버로 전송하거나 수집하지 않습니다. 이러한 앱 고유 데이터는 Google 광고 요청에도 추가하지 않습니다.</p>
+        <p>원격 추천의 공개 availability·목록·JPEG 미리보기·MP4는 사용자 콘텐츠가 아니라 WakeMotion 제공 콘텐츠입니다. 앱은 이 콘텐츠를 제공받기 위한 HTTPS 요청만 전송하며, 그 과정에서 Cloudflare가 IP 주소, 요청 시각·경로와 일반 HTTP 통신 정보를 처리할 수 있습니다.</p>
       </section>
 
       <section>
@@ -85,7 +88,14 @@
           <li>생성된 HEIC/MOV/MP4/GIF 결과</li>
           <li><code>WM-…</code> 진단 코드</li>
         </ul>
-        <p>WakeMotion은 Firebase Analytics, Google Analytics, 별도 충돌 보고 SDK, 광고 중개 SDK(mediation), 자체 계정 또는 자체 서버 시스템(backend)을 사용하지 않습니다. AdMob 화면에 표시되는 광고 노출·클릭·수익 통계는 Google 광고 SDK와 AdMob이 제공하는 것이며, WakeMotion이 별도 분석 도구로 중복 수집하는 정보가 아닙니다.</p>
+        <p>WakeMotion은 Firebase Analytics, Google Analytics, 별도 충돌 보고 SDK, 광고 중개 SDK(mediation), 자체 사용자 계정 또는 서버 변환 시스템을 사용하지 않습니다. 원격 추천에는 아래의 정적 콘텐츠 전송 경로만 사용합니다. AdMob 화면에 표시되는 광고 노출·클릭·수익 통계는 Google 광고 SDK와 AdMob이 제공하는 것이며, WakeMotion이 별도 분석 도구로 중복 수집하는 정보가 아닙니다.</p>
+      </section>
+
+      <section>
+        <h2>6-1. 원격 추천 콘텐츠 전송</h2>
+        <p>원격 추천은 Cloudflare Workers의 GET/HEAD 전용 endpoint와 비공개 R2 저장소를 사용합니다. 앱은 먼저 작은 availability 응답을 확인하고, 사용 가능한 경우에만 공개 목록과 현재 화면에 보이는 JPEG 미리보기를 요청합니다. MP4 원본은 사용자가 추천 항목을 선택하고 다운로드를 시작한 경우에만 요청합니다. 앱은 응답 URL의 동일 host·HTTPS 여부, byte 크기와 SHA-256을 확인합니다.</p>
+        <p>Cloudflare 전송 경로에는 WakeMotion 계정이나 로그인이 없고, 앱이 만든 사용자·기기 식별자를 요청 parameter로 추가하지 않습니다. 다만 인터넷 요청에는 IP 주소, 요청 시각·경로, 통신·보안 metadata가 수반될 수 있고 Cloudflare는 서비스 제공, 보안, 남용 방지, rate limiting, 장애 대응과 집계 지표를 위해 이를 처리할 수 있습니다. WakeMotion은 요청 본문이나 별도 분석 도구로 사용자 영상, 편집값, iPhone 맞춤 profile, 완성 파일 또는 광고 상태를 전송하지 않습니다.</p>
+        <p>원격 availability가 비활성화되거나 응답이 잘못된 경우 앱은 저장된 목록을 노출하지 않고 새 추천 영역을 숨깁니다. 이는 비용·장애·권리 문제에 대응하는 fail-closed 운영 장치이며, 앱에 기본으로 포함된 추천 모션과 사용자가 직접 고른 영상의 로컬 편집·저장 기능은 계속 사용할 수 있습니다.</p>
       </section>
 
       <section>
@@ -99,6 +109,8 @@
           <li>암호화된 기기 profile: 사용자가 설정에서 삭제, 앱 삭제, 환경 불일치 또는 복호화 실패 때 삭제. 앱 삭제 시 profile 파일은 제거되지만 Keychain 키는 남을 수 있음</li>
           <li>잠금 화면 호환성 단계 설정: 사용자가 변경하거나 앱 데이터를 삭제할 때까지 기기 UserDefaults에 보관</li>
           <li>사진 보관함에 저장된 결과: 사용자가 Apple Photos에서 직접 관리</li>
+          <li>원격 추천 availability·목록: 보호되고 백업 제외된 cache에 마지막 정상본이 남을 수 있으나, 새 availability가 enabled일 때만 표시하며 새 정상본·cache 삭제·앱 삭제 때 교체 또는 제거</li>
+          <li>원격 추천 JPEG·MP4: 보호되고 백업 제외된 cache에 최대 영상 20개·100MB로 보관하며, 설정의 다운로드 삭제, LRU 정리, iOS cache 정리 또는 앱 삭제 때 제거</li>
         </ul>
         <p>WakeMotion은 사용자의 원본 Photos 항목을 수정하거나 삭제하지 않습니다. 시스템 공유 시트로 사용자가 직접 보낸 일반 MP4 또는 GIF 사본은 사용자가 선택한 수신 앱이나 서비스의 보관 정책에 따릅니다. 삭제 대상 앱 파일은 iOS 파일 API를 통해 앱 전용 저장소에서 제거하고, 암호화 profile을 앱 설정에서 삭제할 때에는 해당 암호문과 ThisDeviceOnly Keychain 키를 함께 제거합니다. 앱 삭제 시 Keychain 항목은 남을 수 있으므로 가능하면 삭제 전에 WakeMotion 설정에서 profile 삭제를 실행해 주세요.</p>
         <p>WakeMotion은 별도의 광고 데이터 사본이나 자체 사용자별 광고 profile을 보관하지 않습니다. Google SDK가 처리하는 정보는 Google 정책에 따릅니다. Google은 데이터 종류·이용 목적·사용자 설정에 따라 보관 기간이 달라질 수 있고 광고 서버 로그의 IP 일부는 9개월 뒤, 쿠키 정보는 18개월 뒤 익명화하며, 보안·부정행위 방지·법적 의무에는 더 긴 기간이 적용될 수 있다고 공개합니다. 자세한 내용은 <a href="https://policies.google.com/technologies/retention?hl=ko">Google 데이터 보관 정책</a>을 확인해 주세요.</p>
@@ -107,6 +119,15 @@
       <section>
         <h2>8. 국외 처리</h2>
         <p>WakeMotion은 자체 서버로 사용자 미디어나 광고 데이터를 국외 이전하지 않습니다. 다만 아래 외부 서비스는 대한민국 밖의 서버에서 정보를 처리할 수 있습니다.</p>
+        <h3>Cloudflare 원격 추천 전송</h3>
+        <ul>
+          <li>받는 자·연락처: Cloudflare, Inc. · <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare 개인정보처리방침</a></li>
+          <li>정보: 원격 추천 요청의 IP 주소, 요청 시각·경로, 트래픽 라우팅·시스템 구성과 일반 HTTP·보안 metadata</li>
+          <li>국가·시기·방법: 미국을 포함해 Cloudflare 또는 그 서비스 제공자가 시설을 운영하는 국가에서, 앱이 availability·목록·미리보기·선택한 추천 원본을 HTTPS로 요청할 때 처리</li>
+          <li>목적: 정적 추천 콘텐츠 제공, rate limiting, 보안·남용 방지, 장애 대응과 집계 지표</li>
+          <li>기간: Workers Logs가 활성화된 Free 구성의 log event는 현재 최대 3일. 그 밖의 Customer Logs·Network Data는 정보 종류·보안·법적 필요와 Cloudflare 정책에 따른 기간</li>
+          <li>거부와 영향: 새 추천을 사용하지 않거나 네트워크를 차단하면 이후 요청을 중단할 수 있음. 새 추천은 표시·다운로드되지 않지만 기본 추천과 내 영상의 로컬 편집·저장은 계속 가능</li>
+        </ul>
         <h3>Google Mobile Ads 및 UMP</h3>
         <ul>
           <li>받는 자·연락처: Google LLC · <a href="https://support.google.com/policies/troubleshooter/7575787?hl=ko">Google 개인정보 문의</a></li>
@@ -121,13 +142,13 @@
           <li>Gmail: 사용자가 이메일을 보낼 때 발신 주소와 문의 내용이 미국 및 Google이 시설을 운영하는 국가에서 문의 답변·중복 문의 확인·권리 요청·분쟁 대응 목적으로 처리될 수 있음. 일반 문의는 수신일로부터 최대 1년 보관하고 매월 정기 점검에서 11개월이 지난 기록을 지원 Gmail 계정에서 삭제한 뒤 휴지통을 비움. 진행 중인 요청·분쟁 또는 법령상 의무가 있으면 해당 사유 종료 시까지 필요한 범위에서 보관. 이메일을 보내지 않아도 앱 기본 기능 이용 가능</li>
           <li>GitHub Pages: 사용자가 지원 페이지에 접속할 때 IP 주소, 브라우저·통신 로그 등 기본 접속 정보가 미국 등 GitHub 또는 서비스 제공자가 시설을 운영하는 국가에서 페이지 제공·보안·장애 대응 목적으로 처리될 수 있음. 기간은 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 따르며, 페이지에 접속하지 않아도 앱 기본 기능 이용 가능</li>
         </ul>
-        <p>Google은 전 세계에 서버를 운영하며 실제 처리 위치가 요청마다 달라질 수 있다고 공개합니다. 제공자, 처리 국가, 보관 정책 또는 SDK 구성이 바뀌면 이 내용도 갱신합니다.</p>
+        <p>Cloudflare와 Google은 전 세계에 인프라를 운영하며 실제 처리 위치가 요청마다 달라질 수 있습니다. 제공자, 처리 국가, 보관 정책 또는 SDK 구성이 바뀌면 이 내용도 갱신합니다.</p>
       </section>
 
       <section>
         <h2>9. 지원 문의와 웹페이지</h2>
         <p>사용자가 이메일로 문의하면 답변, 중복 문의 확인과 필요한 분쟁 대응을 위해 발신 이메일 주소와 문의 내용을 처리합니다. 문의 제공은 선택이며 보내지 않아도 앱의 기본 기능을 이용할 수 있습니다. 원본 영상, 완성 Live Photo, 계정 비밀번호, 인증번호, 금융정보를 보내지 마세요. 일반 문의 기록은 수신일로부터 최대 1년 보관합니다. 매월 정기 점검에서 11개월이 지난 일반 문의를 지원 Gmail 계정에서 삭제하고 휴지통을 비웁니다. 사용자가 삭제를 요청하면 법령상 제한 사유가 없는 한 지체 없이 처리합니다. 진행 중인 권리 요청·분쟁 또는 법령상 보관 의무가 있는 기록은 일반 문의와 구분해 필요한 기간만 보관하고 해당 사유가 끝난 뒤 지체 없이 삭제합니다. Gmail 제공자의 백업·삭제 처리에는 Google 정책에 따른 기간이 추가로 적용될 수 있습니다.</p>
-        <p>지원 이메일은 Google Gmail을, 이 페이지는 GitHub Pages를 사용합니다. 이메일 전송 또는 페이지 접속 과정에서 각 제공자가 자체 방침에 따라 기본 통신·접속 정보를 처리할 수 있습니다. WakeMotion은 이 웹페이지에 자체 분석 스크립트나 광고 쿠키를 넣지 않습니다. 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>과 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 확인해 주세요.</p>
+        <p>지원 이메일은 Google Gmail을, 이 페이지는 GitHub Pages를 사용합니다. 이메일 전송 또는 페이지 접속 과정에서 각 제공자가 자체 방침에 따라 기본 통신·접속 정보를 처리할 수 있습니다. WakeMotion은 지원 웹페이지나 원격 추천 endpoint에 자체 분석 스크립트, 광고 cookie 또는 사용자 profile을 추가하지 않습니다. 자세한 내용은 <a href="https://policies.google.com/privacy?hl=ko">Google 개인정보처리방침</a>, <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare 개인정보처리방침</a>과 <a href="https://docs.github.com/site-policy/privacy-policies/github-general-privacy-statement">GitHub 개인정보취급방침</a>을 확인해 주세요.</p>
       </section>
 
       <section>
@@ -136,13 +157,14 @@
           <li>iOS 설정에서 카메라·마이크·사진 권한 변경</li>
           <li>WakeMotion 설정에서 개인정보 선택 메뉴가 표시될 때 광고 동의 옵션 검토</li>
           <li>WakeMotion 설정에서 iPhone 맞춤 profile 교체 또는 삭제</li>
+          <li>WakeMotion 설정에서 내려받은 추천 모션 cache 삭제</li>
           <li>WakeMotion 편집기에서 선택한 영상·이미지·문구를 교체하거나 제거</li>
           <li>사진 보관함에서 완성 결과 삭제</li>
           <li>시스템 공유 시트에서 일반 MP4 또는 GIF의 공유 대상 선택 또는 공유 취소</li>
           <li>앱 삭제로 앱 전용 파일 제거</li>
           <li>지원 이메일을 통한 개인정보 문의 또는 지원 문의 기록 삭제 요청</li>
         </ul>
-        <p>사용자는 이메일로 본인과 관련하여 WakeMotion 운영자가 보유한 개인정보의 열람, 정정, 삭제 또는 처리정지를 요청할 수 있습니다. 요청자의 정보 보호를 위해 필요한 범위에서 본인 확인을 요청할 수 있으며, 법령에서 정한 제한 사유가 없다면 지체 없이 처리하고 결과를 알립니다. WakeMotion이 보유하지 않고 Google, Apple 또는 GitHub가 자체 정책에 따라 처리하는 정보는 해당 제공자의 개인정보 관리 수단과 문의 창구를 이용해야 할 수 있습니다.</p>
+        <p>사용자는 이메일로 본인과 관련하여 WakeMotion 운영자가 보유한 개인정보의 열람, 정정, 삭제 또는 처리정지를 요청할 수 있습니다. 요청자의 정보 보호를 위해 필요한 범위에서 본인 확인을 요청할 수 있으며, 법령에서 정한 제한 사유가 없다면 지체 없이 처리하고 결과를 알립니다. WakeMotion이 보유하지 않고 Google, Apple, Cloudflare 또는 GitHub가 자체 정책에 따라 처리하는 정보는 해당 제공자의 개인정보 관리 수단과 문의 창구를 이용해야 할 수 있습니다.</p>
         <p>Keychain 항목은 앱 재설치 뒤 남을 수 있으므로, 가능하면 앱을 삭제하기 전에 WakeMotion 설정에서 맞춤 profile을 먼저 삭제해 주세요.</p>
       </section>
 
@@ -159,6 +181,7 @@
       <section>
         <h2>13. 변경과 문의</h2>
         <p>기능, SDK, 제공자 또는 데이터 흐름이 바뀌면 이 페이지의 시행일과 변경 내용을 갱신합니다. 중요한 변경은 시행 전에 지원 페이지에서 쉽게 확인할 수 있도록 알립니다. 개인정보 처리 및 보호 담당은 WakeMotion 운영자이며 연락처는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>입니다.</p>
+        <p>2026년 9월 2일: 1.1의 Cloudflare 원격 추천 availability·목록·미리보기·선택 원본 다운로드, 통상적 요청 metadata, cache 보관·삭제, 국외 처리와 fail-closed 중단 경계를 추가하고 현재 앱에 하단 banner가 없음을 바로잡았습니다. 사용자 영상·편집 정보·iPhone 맞춤 profile·완성 파일은 원격 추천 endpoint로 보내지 않습니다.</p>
         <p>2026년 8월 29일: Video Studio의 온디바이스 무음 GIF 생성, Photos 저장, 시스템 공유와 임시파일 처리 설명을 추가했습니다. 새 SDK, 계정, 서버, 분석, 추적 또는 App Privacy 수집 데이터 유형은 추가하지 않았습니다.</p>
       </section>
     </article>
