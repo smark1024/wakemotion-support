@@ -1,13 +1,11 @@
 :root {
   color-scheme: dark;
-  --background: #090b18;
-  --surface: #12162b;
-  --surface-strong: #191e38;
-  --text: #f6f7ff;
-  --muted: #aeb5d3;
-  --line: rgba(255, 255, 255, 0.11);
-  --cyan: #55d9ff;
-  --violet: #8b73ff;
+  --background: #000;
+  --surface: #101010;
+  --surface-strong: #181818;
+  --text: #f7f7f5;
+  --muted: #a1a1a1;
+  --line: rgba(255, 255, 255, 0.14);
   --max-width: 1040px;
 }
 
@@ -18,10 +16,7 @@ html { scroll-behavior: smooth; }
 body {
   margin: 0;
   min-width: 320px;
-  background:
-    radial-gradient(circle at 82% 0%, rgba(83, 82, 255, 0.22), transparent 34rem),
-    radial-gradient(circle at 12% 18%, rgba(85, 217, 255, 0.12), transparent 30rem),
-    var(--background);
+  background: var(--background);
   color: var(--text);
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   line-height: 1.65;
@@ -47,29 +42,10 @@ footer {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 11px;
   color: var(--text);
   font-weight: 760;
   letter-spacing: -0.02em;
   text-decoration: none;
-}
-
-.brand-mark {
-  width: 29px;
-  height: 29px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 9px;
-  background: linear-gradient(145deg, #292d61, #101429);
-}
-
-.brand-mark span {
-  width: 11px;
-  height: 11px;
-  border: 2px solid var(--cyan);
-  border-radius: 50%;
-  box-shadow: 0 0 14px var(--violet);
 }
 
 .header-link,
@@ -86,14 +62,6 @@ footer a {
   align-items: flex-start;
   justify-content: center;
   padding: 72px 0 96px;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  color: var(--cyan);
-  font-size: 0.73rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
 }
 
 h1,
@@ -128,8 +96,9 @@ h2 {
   justify-content: center;
   padding: 0 22px;
   border-radius: 16px;
-  background: linear-gradient(135deg, var(--cyan), var(--violet));
-  color: #090b18;
+  border: 1px solid var(--text);
+  background: var(--text);
+  color: var(--background);
   font-weight: 800;
   text-decoration: none;
 }
@@ -151,9 +120,7 @@ h2 {
 .panel,
 .policy-card {
   border: 1px solid var(--line);
-  background: rgba(18, 22, 43, 0.76);
-  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(18px);
+  background: var(--surface);
 }
 
 .step-grid li {
@@ -165,7 +132,7 @@ h2 {
 .step-grid span {
   display: block;
   margin-bottom: 28px;
-  color: var(--violet);
+  color: var(--muted);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -197,8 +164,7 @@ h2 {
 .check-list strong { color: var(--text); }
 
 .contact { max-width: 720px; margin-inline: auto; text-align: center; }
-.contact .eyebrow { text-align: center; }
-.email-link { color: var(--cyan); font-size: clamp(1.05rem, 3vw, 1.4rem); font-weight: 750; }
+.email-link { color: var(--text); font-size: clamp(1.05rem, 3vw, 1.4rem); font-weight: 750; text-underline-offset: 4px; }
 .response-note { margin-top: 14px; font-size: 0.88rem; }
 code { color: var(--text); }
 
@@ -234,7 +200,7 @@ code { color: var(--text); }
 .policy-card h2 { font-size: 1.32rem; letter-spacing: -0.025em; }
 .policy-card ul { padding-left: 1.25rem; }
 .policy-card li + li { margin-top: 8px; }
-.policy-card a { color: var(--cyan); text-underline-offset: 3px; }
+.policy-card a { color: var(--text); text-underline-offset: 3px; }
 
 footer {
   display: flex;

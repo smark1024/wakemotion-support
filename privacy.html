@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="WakeMotion 개인정보처리방침입니다.">
-  <meta name="theme-color" content="#090b18">
+  <meta name="theme-color" content="#000000">
   <title>WakeMotion 개인정보처리방침</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="./" aria-label="WakeMotion 지원 홈">
-      <span class="brand-mark" aria-hidden="true"><span></span></span>
       <span>WakeMotion</span>
     </a>
     <a class="header-link" href="./">지원</a>
@@ -19,10 +18,9 @@
 
   <main class="document-page">
     <section class="document-hero">
-      <p class="eyebrow">PRIVACY</p>
       <h1>개인정보처리방침</h1>
       <dl class="metadata">
-        <div><dt>시행일</dt><dd>2026년 9월 2일</dd></div>
+        <div><dt>시행일</dt><dd>2026년 9월 4일</dd></div>
         <div><dt>개인정보 처리 및 보호 담당</dt><dd>WakeMotion 운영자</dd></div>
         <div><dt>연락처</dt><dd><a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a></dd></div>
       </dl>
@@ -95,7 +93,7 @@
         <h2>6-1. 원격 추천 콘텐츠 전송</h2>
         <p>원격 추천은 Cloudflare Workers의 GET/HEAD 전용 endpoint와 비공개 R2 저장소를 사용합니다. 앱은 먼저 작은 availability 응답을 확인하고, 사용 가능한 경우에만 공개 목록과 현재 화면에 보이는 JPEG 미리보기를 요청합니다. MP4 원본은 사용자가 추천 항목을 선택하고 다운로드를 시작한 경우에만 요청합니다. 앱은 응답 URL의 동일 host·HTTPS 여부, byte 크기와 SHA-256을 확인합니다.</p>
         <p>Cloudflare 전송 경로에는 WakeMotion 계정이나 로그인이 없고, 앱이 만든 사용자·기기 식별자를 요청 parameter로 추가하지 않습니다. 다만 인터넷 요청에는 IP 주소, 요청 시각·경로, 통신·보안 metadata가 수반될 수 있고 Cloudflare는 서비스 제공, 보안, 남용 방지, rate limiting, 장애 대응과 집계 지표를 위해 이를 처리할 수 있습니다. WakeMotion은 요청 본문이나 별도 분석 도구로 사용자 영상, 편집값, iPhone 맞춤 profile, 완성 파일 또는 광고 상태를 전송하지 않습니다.</p>
-        <p>원격 availability가 비활성화되거나 응답이 잘못된 경우 앱은 저장된 목록을 노출하지 않고 새 추천 영역을 숨깁니다. 이는 비용·장애·권리 문제에 대응하는 fail-closed 운영 장치이며, 앱에 기본으로 포함된 추천 모션과 사용자가 직접 고른 영상의 로컬 편집·저장 기능은 계속 사용할 수 있습니다.</p>
+        <p>원격 availability가 비활성화되거나 응답이 잘못된 경우 앱은 저장된 목록을 노출하지 않고 추천 영역에 내 영상 사용 동선을 표시합니다. 이는 비용·장애·권리 문제에 대응하는 fail-closed 운영 장치이며, 사용자가 직접 고른 영상의 로컬 편집·저장 기능은 계속 사용할 수 있습니다. 앱 번들에는 추천 MP4나 미리보기를 포함하지 않습니다.</p>
       </section>
 
       <section>
@@ -126,7 +124,7 @@
           <li>국가·시기·방법: 미국을 포함해 Cloudflare 또는 그 서비스 제공자가 시설을 운영하는 국가에서, 앱이 availability·목록·미리보기·선택한 추천 원본을 HTTPS로 요청할 때 처리</li>
           <li>목적: 정적 추천 콘텐츠 제공, rate limiting, 보안·남용 방지, 장애 대응과 집계 지표</li>
           <li>기간: Workers Logs가 활성화된 Free 구성의 log event는 현재 최대 3일. 그 밖의 Customer Logs·Network Data는 정보 종류·보안·법적 필요와 Cloudflare 정책에 따른 기간</li>
-          <li>거부와 영향: 새 추천을 사용하지 않거나 네트워크를 차단하면 이후 요청을 중단할 수 있음. 새 추천은 표시·다운로드되지 않지만 기본 추천과 내 영상의 로컬 편집·저장은 계속 가능</li>
+          <li>거부와 영향: 원격 추천을 사용하지 않거나 네트워크를 차단하면 이후 요청을 중단할 수 있음. 추천은 표시·다운로드되지 않지만 내 영상의 로컬 편집·저장은 계속 가능</li>
         </ul>
         <h3>Google Mobile Ads 및 UMP</h3>
         <ul>
@@ -181,6 +179,7 @@
       <section>
         <h2>13. 변경과 문의</h2>
         <p>기능, SDK, 제공자 또는 데이터 흐름이 바뀌면 이 페이지의 시행일과 변경 내용을 갱신합니다. 중요한 변경은 시행 전에 지원 페이지에서 쉽게 확인할 수 있도록 알립니다. 개인정보 처리 및 보호 담당은 WakeMotion 운영자이며 연락처는 <a href="mailto:wakemotion.support@gmail.com">wakemotion.support@gmail.com</a>입니다.</p>
+        <p>2026년 9월 4일: 앱 번들에 추천 MP4와 미리보기를 포함하지 않는 현재 배포 구성을 명확히 하고, 원격 추천을 사용할 수 없을 때에도 내 영상의 로컬 편집·저장은 계속 사용할 수 있음을 바로잡았습니다. 데이터 처리 유형은 변경되지 않았습니다.</p>
         <p>2026년 9월 2일: 1.1의 Cloudflare 원격 추천 availability·목록·미리보기·선택 원본 다운로드, 통상적 요청 metadata, cache 보관·삭제, 국외 처리와 fail-closed 중단 경계를 추가하고 현재 앱에 하단 banner가 없음을 바로잡았습니다. 사용자 영상·편집 정보·iPhone 맞춤 profile·완성 파일은 원격 추천 endpoint로 보내지 않습니다.</p>
         <p>2026년 8월 29일: Video Studio의 온디바이스 무음 GIF 생성, Photos 저장, 시스템 공유와 임시파일 처리 설명을 추가했습니다. 새 SDK, 계정, 서버, 분석, 추적 또는 App Privacy 수집 데이터 유형은 추가하지 않았습니다.</p>
       </section>
